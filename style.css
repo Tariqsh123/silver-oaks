@@ -117,7 +117,7 @@
 .hero {
   width: 100%;
   padding-top: 80px;
-  background: url(images/home-hero.png);
+  background: url(images/home-hero.webp);
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -320,12 +320,12 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-  background: #F2F2EC;
+  background: #4a5a1a;
   box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
 /* ICON BOX */
-.icon {
+ .icon {
   width: auto;
   height: 100px;
   display: flex;
@@ -333,12 +333,14 @@
   justify-content: center;
 }
 
-.icon img {
+ .icon img {
   width: auto;
   height: 50px;
   object-fit: contain;
 }
-
+.service-card:hover .icon img{
+  filter: brightness(100);
+}
 /* TEXT */
 .service-card h3 {
   font-size: 15px;
@@ -367,13 +369,8 @@
   gap: 5px;
   transition: 0.3s;
 }
-
-.service-card a span {
-  transition: 0.3s;
-}
-
-.service-card a:hover span {
-  transform: translateX(5px);
+.service-card:hover h3,.service-card:hover p ,.service-card:hover a{
+  color: white;
 }
 
 /* 🔥 RESPONSIVE */
@@ -564,7 +561,7 @@
             /* max-width: 1280px; */
             margin: 0 auto;
             padding: 0px;
-            background: url(images/home-page-about-us-bg.jpeg);
+            background: url(images/home-page-about-us-bg.webp);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -2412,7 +2409,7 @@
 /* LEFT IMAGE FULL HEIGHT */
 .career-about-section-left {
   flex: 1;
-  background-image: url("images/career-page-img.png");
+  background-image: url("images/career-page-img.webp");
   background-size: cover;
   background-position: center;
   min-height: 100%;
@@ -2522,11 +2519,11 @@
 }
 
 .career-cta-section-left {
-  background-image: url("images/People-First-icon.png");
+  background-image: url("images/People-First-icon.webp");
 }
 
 .career-cta-section-extra-img {
-  background-image: url("images/about-after-hero-tree.png");
+  background-image: url("images/about-after-hero-tree.webp");
 }
 
 /* CONTENT */
