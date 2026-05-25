@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="images/logo.png" alt="logo" title="logo" loading="lazy">
+    </div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" title="Home">Home</a></li>
+      <li><a href="about-us.html" title="About us">About us</a></li>
+      <li><a href="services.html" title="Services">Services</a></li>
+      <li><a href="career.html" title="Career">Career</a></li>
+      <li><a href="news-and-event.html" class="active" title="News & Events">News & Events</a></li>
+      <li><a href="contact.html" title="Contact us">Contact us</a></li>
+    </ul>
+
+    <!-- BUTTON -->
+    <div class="nav-btn">
+      <a href="contact.html" title="contact">Get Started →</a>
+    </div>
+
+    <!-- MOBILE MENU ICON -->
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+  </div>
+</header>
+<script>
+    const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+    <!-- Nav End -->
+
+    <!-- header -->
+     <section class="about-hero" style="background-image: url(images/news-hero-bg.jpeg);">
+  <div class="about-hero-overlay">
+    <div class="about-hero-content">
+
+      <p class="sub-heading">News and Events </p>
+
+      <h1>
+        Inspiring Events <br>
+        <span>Meaningful Connections</span>
+      </h1>
+
+      <p class="description">
+        Stay updated with SilverOaks’ latest events, industry engagements, training sessions, career workshops, internship drives, and community initiatives. 
+      </p>
+
+    </div>
+  </div>
+</section>
+    <!-- header  End-->
+
+
+<section class="events-section">
+  <div class="events-container">
+
+    <!-- Header -->
+    <div class="events-header">
+      <h2>Upcoming <span> Events</span></h2>
+      <p>
+        We are currently preparing exciting workshops, training sessions, and networking opportunities.
+        Stay connected for upcoming announcements.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="events-grid">
+
+      <!-- Card 1 -->
+      <div class="events-card">
+        <div class="events-icon">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+
+        <h3>Resume Building Workshop</h3>
+        <p class="events-desc">
+          Learn how to craft a professional resume that highlights your strengths and gets you noticed.
+        </p>
+
+        <div class="events-meta">
+          <div><i class="fa-solid fa-location-dot"></i> SilverOaks Talent Partners</div>
+          <div><i class="fa-regular fa-calendar"></i> Date To Be Announced</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="events-card">
+        <span class="events-badge">COMING SOON</span>
+
+        <div class="events-icon">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+
+        <h3>Career Guidance Session</h3>
+        <p class="events-desc">
+          Get personalized career guidance from industry experts and take the next step with confidence.
+        </p>
+
+        <div class="events-meta">
+          <div><i class="fa-solid fa-location-dot"></i> SilverOaks Talent Partners</div>
+          <div><i class="fa-regular fa-calendar"></i> Date To Be Announced</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="events-card">
+        <span class="events-badge">COMING SOON</span>
+
+        <div class="events-icon">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+
+        <h3>Internship Readiness Program</h3>
+        <p class="events-desc">
+          Prepare for real-world opportunities with practical skills and industry exposure.
+        </p>
+
+        <div class="events-meta">
+          <div><i class="fa-solid fa-location-dot"></i> SilverOaks Talent Partners</div>
+          <div><i class="fa-regular fa-calendar"></i> Date To Be Announced</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="events-card">
+        <span class="events-badge">COMING SOON</span>
+
+        <div class="events-icon">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <h3>Leadership & Soft Skills Training</h3>
+        <p class="events-desc">
+          Enhance your communication, leadership, and teamwork skills to thrive in any professional environment.
+        </p>
+
+        <div class="events-meta">
+          <div><i class="fa-solid fa-location-dot"></i> SilverOaks Talent Partners</div>
+          <div><i class="fa-regular fa-calendar"></i> Date To Be Announced</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="events-newsletter">
+  <div class="events-newsletter-container">
+
+    <!-- LEFT SIDE -->
+    <div class="events-newsletter-left">
+
+      <div class="events-newsletter-left-row">
+
+        <!-- ICON -->
+        <div class="events-newsletter-icon">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+
+        <!-- TEXT COLUMN -->
+        <div class="events-newsletter-text">
+          <h2>Don’t Miss Out!</h2>
+          <p>
+            Be the first to know about our upcoming events. <br>
+            Workshops and career opportunities.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="events-newsletter-right">
+
+      <!-- INPUT + LABEL COLUMN -->
+      <div class="events-newsletter-input-group">
+        <input type="email" placeholder="Enter your email address" />
+
+        <small>
+          We respect your privacy. Unsubscribe any time.
+        </small>
+      </div>
+
+      <!-- BUTTON ROW -->
+      <button class="events-newsletter-btn" onclick="saveEmail()">
+  Notify me
+  <i class="fa-solid fa-paper-plane"></i>
+</button>
+
+    </div>
+
+  </div>
+</section>
+<script>
+function saveEmail(){
+  let input = document.querySelector(".events-newsletter input");
+  let email = input.value.trim();
+
+  if(!email){
+    alert("Please enter email");
+    return;
+  }
+
+  let emails = JSON.parse(localStorage.getItem("notifyEmails")) || [];
+  emails.push(email);
+
+  localStorage.setItem("notifyEmails", JSON.stringify(emails));
+
+  input.value = "";
+  alert("Subscribed Successfully!");
+}
+</script>
+
+<section class="events-gallery">
+  <div class="events-gallery-container">
+
+    <!-- TITLE -->
+    <div class="events-gallery-header">
+      <h2>Event <span> Gallery</span></h2>
+    </div>
+
+    <!-- GRID -->
+    <div class="events-gallery-grid">
+
+      <div class="events-gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDYjkEzAf8K-tqsa-Sy8JCnDk1VPvrVLzzaA&s" alt="event image 1">
+      </div>
+
+      <div class="events-gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaIkkE68C7rUuMsswyLbpCOpW8Y6bMUBjD8Q&s" alt="event image 2">
+      </div>
+
+      <div class="events-gallery-item">
+        <img src="https://erpnews.com/v2/wp-content/uploads/2022/09/Corporate-Event-1.webp" alt="event image 3">
+      </div>
+
+      <div class="events-gallery-item">
+        <img src="https://www.oyorooms.com/blog/wp-content/uploads/2018/02/Locate-Your-Events-Purpose.jpg" alt="event image 4">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<script>
+function loadGallery(){
+  let images = JSON.parse(localStorage.getItem("eventGallery")) || [];
+
+  let items = document.querySelectorAll(".events-gallery-item img");
+
+  items.forEach((img, i)=>{
+    if(images[i]){
+      img.src = images[i];
+    }
+  });
+}
+
+loadGallery();
+</script>
+
+
+<section class="about-cta-section">
+
+  <div class="cta-container">
+
+    <!-- 1. HEADING -->
+    <h2>
+      <span> Let’s Build a Better Future</span> <br>
+      Together
+    </h2>
+
+    <!-- 2. PARAGRAPH -->
+    <p>
+     Whether you’re an organization looking for the right talent or an individual ready to grow your career, SilverOaks is here to help you take the next step. 
+    </p>
+
+    <!-- 3. BUTTON -->
+    <button class="cta-btn">Get in Touch</button>
+
+  </div>
+
+</section>
+
+
+    
+<!-- Footer -->
+  <footer id="footer-main" class="footer-container">
+
+    <div class="footer-top">
+        
+        <!-- Logo & About -->
+        <div class="footer-col footer-about">
+            <img src="images/logo.png" 
+                 alt="Logo" title="Logo" loading="lazy" class="footer-logo">
+
+            <p class="footer-text">
+                Connecting Talent with Opportunities
+            </p>
+
+           
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="about-us.html" title="About us">About us</a></li>
+                <li><a href="services.html" title="Services">Services</a></li>
+                <li><a href="career.html" title="Career">Career</a></li>
+                <li><a href="news-and-event.html" title="News & Events ">News & Events </a></li>
+                <li><a href="contact.html" title="Contact us">Contact us</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+            <h4 class="footer-heading">Our Services</h4>
+            <ul class="footer-links">
+                <li><a href="#" title="HR Management">HR Management</a></li>
+                <li><a href="#" title="Training & Development">Training & Development</a></li>
+                <li><a href="#" title="Internships Opportunities">Internships Opportunities</a></li>
+                <li><a href="#" title="Job Readiness Skills">Job Readiness Skills</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact">
+                <li><img src="https://img.icons8.com/?size=100&id=9730&format=png&color=4A5A1A" alt="Phone" title="Phone" loading="lazy"> +92 300 1234567</li>
+                <li><img src="https://img.icons8.com/?size=100&id=tiHbAqWU3ZCQ&format=png&color=4A5A1A" alt="email" title="email" loading="lazy"> info@silveroaks.com</li>
+                <li><img src="https://img.icons8.com/?size=100&id=2963&format=png&color=4A5A1A" alt="site" title="site" loading="lazy"> www.silveroaks.com</li>
+                <li><img src="https://img.icons8.com/?size=100&id=7880&format=png&color=4A5A1A" alt="Location" title="Location" loading="lazy"> Karachi, Pakistan</li>
+            </ul>
+             <div class="footer-social">
+                <a href="#" title="linkedin" ><img src="https://img.icons8.com/?size=100&id=8808&format=png&color=4A5A1A" alt="linkedin" title="linkedin" loading="lazy"></a>
+                <a href="#" title="facebook" ><img src="https://img.icons8.com/?size=100&id=8818&format=png&color=4A5A1A" alt="facebook" title="facebook" loading="lazy"></a>
+                <a href="#" title="instagram" ><img src="https://img.icons8.com/?size=100&id=32309&format=png&color=4A5A1A" alt="instagram" title="instagram" loading="lazy"></a>
+                <a href="#" title="youtube" ><img src="https://img.icons8.com/?size=100&id=37326&format=png&color=4A5A1A" alt="youtube" title="youtube" loading="lazy"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <p class="footer-copy">
+            © 2026 SilverOaks Talent Partners. All Rights Reserved.
+        </p>
+
+        <div class="footer-bottom-links">
+            <a href="#" title="Privacy Policy">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" title="Terms & Conditions">Terms & Conditions</a>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>

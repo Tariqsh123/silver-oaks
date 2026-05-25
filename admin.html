@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SilverOaks Admin</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --primary:#4a5a1a;
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#1f1f1f;
+  --border:#e6e6e6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  background:var(--bg);
+}
+
+/* WRAPPER */
+.wrapper{
+  display:flex;
+  height:100vh;
+}
+
+/* SIDEBAR (UPDATED GREEN) */
+.sidebar{
+  width:260px;
+  background:var(--primary);
+  padding:20px;
+  color:#fff;
+}
+
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.logo img{
+  width:42px;
+  filter: brightness(100%);
+}
+
+.logo h2{
+  font-size:18px;
+  color:#fff;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.nav-item{
+  padding:12px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  transition:.2s;
+  color:#fff;
+  opacity:0.85;
+}
+
+.nav-item:hover{
+  background:rgba(255,255,255,0.12);
+  opacity:1;
+}
+
+.nav-item.active{
+  background:#fff;
+  color:var(--primary);
+  font-weight:bold;
+}
+
+/* MAIN */
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* TOPBAR */
+.topbar{
+  background:#fff;
+  padding:18px 25px;
+  border-bottom:1px solid var(--border);
+  font-size:18px;
+  font-weight:600;
+}
+
+/* CONTENT */
+.content{
+  padding:25px;
+  overflow:auto;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+  margin-bottom:20px;
+}
+
+/* EMAIL ITEM */
+.email-item{
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin-bottom:10px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+input{
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  outline:none;
+  transition:.2s;
+}
+
+input:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(74,90,26,0.15);
+}
+
+/* UPLOAD ROW */
+.upload-row{
+  display:flex;
+  gap:10px;
+}
+
+/* BUTTON */
+.btn{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:12px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:#3f4b17;
+}
+
+/* PREVIEW */
+.preview{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.preview img{
+  width:75px;
+  height:75px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid var(--border);
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="logo">
+      <img src="images/logo.png">
+      <h2>SilverOaks</h2>
+    </div>
+
+    <div class="nav">
+      <div class="nav-item active" onclick="switchTab('emails', this)">
+        <i class="fa-solid fa-envelope"></i> Emails
+      </div>
+
+      <div class="nav-item" onclick="switchTab('gallery', this)">
+        <i class="fa-solid fa-image"></i> Gallery
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="topbar">
+      Admin Dashboard
+    </div>
+
+    <div class="content">
+
+      <!-- EMAILS -->
+      <div id="emailsSection" class="card">
+        <h3>Notify Me Emails</h3>
+        <div id="emailList"></div>
+      </div>
+
+      <!-- GALLERY -->
+      <div id="gallerySection" class="card" style="display:none">
+
+        <h3>Event Gallery Manager</h3>
+
+        <div class="grid" style="margin-top:15px">
+
+          <div class="upload-row">
+            <input type="text" id="img1" placeholder="Image URL 1">
+            <input type="file" id="file1">
+          </div>
+
+          <div class="upload-row">
+            <input type="text" id="img2" placeholder="Image URL 2">
+            <input type="file" id="file2">
+          </div>
+
+          <div class="upload-row">
+            <input type="text" id="img3" placeholder="Image URL 3">
+            <input type="file" id="file3">
+          </div>
+
+          <div class="upload-row">
+            <input type="text" id="img4" placeholder="Image URL 4">
+            <input type="file" id="file4">
+          </div>
+
+        </div>
+
+        <button class="btn" onclick="saveGallery()" style="margin-top:20px">
+          <i class="fa-solid fa-upload"></i> Update Gallery
+        </button>
+
+        <div class="preview" id="preview"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+/* TAB */
+function switchTab(tab, el){
+  document.getElementById('emailsSection').style.display = tab==='emails'?'block':'none';
+  document.getElementById('gallerySection').style.display = tab==='gallery'?'block':'none';
+
+  document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+  el.classList.add('active');
+}
+
+/* EMAILS */
+function loadEmails(){
+  let emails = JSON.parse(localStorage.getItem('notifyEmails')) || [];
+  let box = document.getElementById('emailList');
+  box.innerHTML='';
+
+  emails.forEach(e=>{
+    let div=document.createElement('div');
+    div.className='email-item';
+    div.innerHTML=`<i class="fa-solid fa-envelope" style="color:#4a5a1a"></i> ${e}`;
+    box.appendChild(div);
+  });
+}
+loadEmails();
+
+/* FILE CONVERT */
+function toBase64(file){
+  return new Promise(res=>{
+    let r=new FileReader();
+    r.onload=()=>res(r.result);
+    r.readAsDataURL(file);
+  });
+}
+
+/* SAVE GALLERY */
+async function saveGallery(){
+  let arr=[];
+
+  for(let i=1;i<=4;i++){
+    let url=document.getElementById('img'+i).value;
+    let file=document.getElementById('file'+i).files[0];
+
+    if(file){
+      arr.push(await toBase64(file));
+    }else{
+      arr.push(url);
+    }
+  }
+
+  localStorage.setItem('eventGallery', JSON.stringify(arr));
+  alert('Gallery Updated!');
+  loadPreview();
+}
+
+/* PREVIEW */
+function loadPreview(){
+  let data=JSON.parse(localStorage.getItem('eventGallery'))||[];
+  let box=document.getElementById('preview');
+  box.innerHTML='';
+
+  data.forEach(img=>{
+    if(img){
+      let i=document.createElement('img');
+      i.src=img;
+      box.appendChild(i);
+    }
+  });
+}
+
+loadPreview();
+
+</script>
+
+</body>
+</html>
