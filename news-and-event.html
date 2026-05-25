@@ -262,6 +262,10 @@ function saveEmail(){
 
   </div>
 </section>
+<div class="gallery-overlay" id="galleryOverlay">
+  <span class="gallery-close" id="closeOverlay">&times;</span>
+  <img id="overlayImg" src="" alt="preview">
+</div>
 <script>
 function loadGallery(){
   let images = JSON.parse(localStorage.getItem("eventGallery")) || [];
@@ -276,6 +280,31 @@ function loadGallery(){
 }
 
 loadGallery();
+</script>
+<script>
+  const overlay = document.getElementById("galleryOverlay");
+const overlayImg = document.getElementById("overlayImg");
+const closeBtn = document.getElementById("closeOverlay");
+
+// image click event
+document.querySelectorAll(".events-gallery-item img").forEach(img => {
+  img.addEventListener("click", () => {
+    overlay.classList.add("active");
+    overlayImg.src = img.src;
+  });
+});
+
+// close on button
+closeBtn.addEventListener("click", () => {
+  overlay.classList.remove("active");
+});
+
+// close on background click
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove("active");
+  }
+});
 </script>
 
 

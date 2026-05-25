@@ -912,6 +912,8 @@
 .footer-text {
     line-height: 1.6;
     margin-bottom: 20px;
+    position: relative;
+    left: 15%;
     font-weight: bold;
 }
 
@@ -1011,11 +1013,12 @@
         padding: 40px 20px;
     }
     .footer-logo{
-      width: auto;
-      height: 100px;
+      width: 100%;
+      height: auto;
     }
     .footer-text{
       text-align: center;
+      left: 0;
     }
     .footer-social{
       display: flex;
@@ -1227,7 +1230,7 @@
 
 .about-values-promise {
   width: 100%;
-  padding: 80px 20px;
+  padding: 60px 20px;
   background: #f9f9f9;
   text-align: center;
 }
@@ -1341,6 +1344,8 @@
   box-shadow: none;
   background: none;
   width: 250px;
+  height: 250px;
+  padding: 10px;
   position: relative;
 }
 @media (max-width: 600px) {
@@ -1454,7 +1459,7 @@
 }
 
 .service-page-what-we-do {
-  padding: 60px 20px;
+  padding: 0px 20px 60px;
   background: #f6f7f9;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -1576,10 +1581,10 @@
 .hr-list li::after {
   content: attr(data-tooltip);
   position: absolute;
-  left: 70%;
+  left: 75%;
   top: 50%;
   transform: translateY(-50%);
-  width: 240px;
+  width: 110px;
   background: #000000;
   color: #fff;
   padding: 10px 12px;
@@ -1601,12 +1606,21 @@
   visibility: visible;
 }
 .career-card-box{
-  height: 300px;
+  height: 250px;
+  width: 250px;
 }
 .career-card-box:hover{
-  background-color: #F2F2EC;
+  background-color: #4a5a1a;
 
 }
+.career-card-box:hover img{
+  filter: brightness(100);
+}
+
+.career-card-box:hover h3,.career-card-box:hover p{
+  color: white;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -2523,12 +2537,12 @@
   width: fit-content;
   max-width: 800px;
   gap: 20px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .career-cta-section-title {
   font-size: 35px;
-  margin-bottom: 15px;
+  margin: 0;
   max-width: 500px;
   color: #fff;
 }
@@ -3132,6 +3146,52 @@
 
 .events-gallery-item:hover img {
   transform: scale(1.05);
+}
+/* OVERLAY BACKDROP */
+.gallery-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.gallery-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* BIG IMAGE */
+.gallery-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: 0.3s ease;
+}
+
+.gallery-overlay.active img {
+  transform: scale(1);
+}
+
+/* CLOSE BUTTON */
+.gallery-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 
 p ,a,li,button{
