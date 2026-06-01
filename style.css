@@ -112,6 +112,10 @@
   .nav-btn {
     display: none;
   }
+  .logo img{
+    height: auto;
+    width: 200px;
+  }
 }
 
 .hero {
@@ -1054,6 +1058,7 @@
 
 .about-hero {
   width: 100%;
+  padding: 40px 10px;
   height: fit-content;
   background: url('images/about-us-bg.webp') no-repeat center center/cover;
   position: relative;
@@ -1106,6 +1111,8 @@
 @media (max-width: 768px) {
   .about-hero {
     justify-content: center;
+    background-image: none !important;
+    background: rgb(243, 243, 243);
     text-align: center;
   }
 
@@ -2203,7 +2210,6 @@
   height: 150px;
   width: auto;
   border-radius: 20px;
-  opacity: 0.3;
   filter: brightness(100);
   display: block;
 }
